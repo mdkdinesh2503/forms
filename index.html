@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>D I N E S H K U M A R F O R M</title>
+  <link rel="shortcut icon" sizes="32x32" href="https://ak.picdn.net/assets/cms/sstk-favicon-32.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <div id="outside">
+    <form id="myQuiz" method="post">
+      <h1 id="title">M Y F O R M</h1>
+      <p><b>Note:</b> Use Capital Letters Only</p>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <label>FIRST NAME :</label><input id="fst" name="FIRST NAME " placeholder="FIRST NAME" required><br><br>
+        <label>LAST NAME :</label><input id="lst" name="LAST NAME" placeholder="LAST NAME" required><br><br>
+        <label>REGISTER NO :</label><input id="rgst" type="tel" name="REGISTER NO " placeholder="REGISTER NO"
+          required><br><br>
+        <label>DOB :</label><input id="dob" type="date" name="DOB " required><br><br>
+        <label>AGE :</label> <input id="age" width="400" type="range" min="0" max="120" name="AGE " value="47"
+          onchange="show_value(this.value);" required>
+        <span id="slider_value" style="color:red;"></span><br><br>
+        <label>GENDER :</label>
+        <select id="gndr" name="GENDER">
+          <option hidden selected value> -- select your Gender -- </option>
+          <option>MALE</option>
+          <option>FEMALE</option>
+          <option>OTHERS</option>
+        </select><br><br>
+        <label>FATHER'S NAME :</label><input id="fthr" name="FATHER'S NAME " placeholder="FATHER'S NAME"
+          required><br><br>
+        <label>MOTHER'S NAME :</label><input id="mthr" name="MOTHER'S NAME " placeholder="MOTHER'S NAME"
+          required><br><br>
+        <label>ADDRESS :</label>
+        <address><textarea id="adrs" name="ADDRESS " placeholder="ADDRESS" required></textarea></address><br>
+        <label>PINCODE :</label><input id="pncd" type="tel" name="PINCODE " placeholder="PINCODE" maxlength="6"
+          required><br><br>
+        <label>EMAIL :</label><input id="eml" type="email" name="EMAIL " placeholder="ENTER VALID EMAIL"
+          required><br><br>
+        <label>MOBILE NO :</label><input id="mbl" type="tel" name="MOBILE NO " placeholder="PHONE NO" maxlength="10"
+          required><br><br>
+        <label>LANGUAGE KNOWN :</label> <input id="lng" name="LANGUAGE KNOWN " required><br><br>
+        <fieldset>
+          <div>
+            <label>EDUCATION LEVEL COMPLETED:</label>
+            <select id="elc" name="EDUCATION LEVEL COMPLETED ">
+              <option hidden selected value> -- select an option -- </option>
+              <option>UNIVERSITY</option>
+              <option>COLLEGE</option>
+              <option>HIGH SCHOOL</option>
+              <option>NONE</option>
+            </select><br><br>
+            <label>COLLEGE NAME :</label><input id="clgn" name="COLLEGE NAME " placeholder="COLLEGE NAME"
+              required><br><br>
+            <label>YEAR OF PASSING :</label><input id="yop" type="tel" name="YEAR OF PASSING "
+              placeholder="YEAR OF PASSING" maxlength="4" required><br><br>
+            <label>ENGINEERING QUALIFICATION :</label>
+            <select id="eq" name="ENGINEERING QUALIFICATION " required>
+              <option hidden selected value> -- select an option -- </option>
+              <option>B.E.</option>
+              <option>B.TECH.</option>
+              <option>M.E.</option>
+              <option>M.TECH.</option>
+              <option>M.B.A.</option>
+              <option>M.C.A.</option>
+            </select><br><br>
+            <label>ENGINEERING DEPARTMENT :</label>
+            <select id="ed" name="ENGINEERING DEPARTMENT " required>
+              <option hidden selected value> -- select an option -- </option>
+              <option>COMPUTER SCIENCE AND ENGINEERING</option>
+              <option>INFORMATION TECHNOLOGY</option>
+              <option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+              <option>ELECTRICAL AND COMMUNICATION ENGINEERING</option>
+              <option>AERONAUTICAL ENGINEERING</option>
+              <option>CHEMICAL ENGINEERING</option>
+              <option>MECHANICAL ENGINEERING</option>
+              <option>AUTOMOBILE ENGINEERING</option>
+            </select><br>
+          </div>
+        </fieldset><br>
+        <fieldset>
+          <p>UPLOAD YOUR RESUME HERE:<input id="rsme" type="file"></input></p>
+        </fieldset>
+        <div class="btn">
+          <button id="rstbtn" type="reset">RESET<i class="fas fa-share"></i></button>
+          <button id="pntbtn" onclick="printFunction()">PRINT<i class="fas fa-share"></i></button>
+          <button id="smtbtn" type="submit">SUBMIT<i class="fas fa-share"></i></button>
+        </div>
+      </fieldset>
+    </form>
+    <script>
+      function show_value(x) {
+        document.getElementById("slider_value").innerHTML = x;
+      }
+      function printFunction() {
+        var resetbutton = document.getElementById("rstbtn");
+        var printbutton = document.getElementById("pntbtn");
+        var submitbutton = document.getElementById("smtbtn");
+        resetbutton.style.visibility = 'hidden';
+        printbutton.style.visibility = 'hidden';
+        submitbutton.style.visibility = 'hidden';
+        window.print();
+        resetbutton.style.visibility = 'visible';
+        printbutton.style.visibility = 'visible';
+        submitbutton.style.visibility = 'visible';
+      }
+
+      const myQuiz = document.getElementById("myQuiz");
+      myQuiz.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var Name = document.getElementById("fst").value + " " + document.getElementById("lst").value;
+        var RegNo = document.getElementById("rgst").value;
+        var Dob = document.getElementById("dob").value;
+        var Age = document.getElementById("age").value;
+        var Gender = document.getElementById("gndr").value;
+        var FatherName = document.getElementById("fthr").value;
+        var MotherName = document.getElementById("mthr").value;
+        var Address = document.getElementById("adrs").value;
+        var Pincode = document.getElementById("pncd").value;
+        var Email = document.getElementById("eml").value;
+        var MobileNo = document.getElementById("mbl").value;
+        var LanguageKnown = document.getElementById("lng").value;
+        var EducationLevel = document.getElementById("elc").value;
+        var CollegeName = document.getElementById("clgn").value;
+        var YearOfPassing = document.getElementById("yop").value;
+        var EngineeringQualification = document.getElementById("eq").value;
+        var EngineeringDepartment = document.getElementById("ed").value;
+        myWindow = window.open('');
+        myWindow.document.writeln("NAME: " + Name + "<br>REGISTER NO: " + RegNo + "<br>DOB: " + Dob + "<br>AGE: " + Age + "<br>GENDER: " + Gender + "<br>FATHER'S NAME: " + FatherName
+          + "<br>MOTHER'S NAME: " + MotherName + "<br>ADDRESS: " + Address + "<br>PINCODE: " + Pincode + "<br>EMAIL: " + Email + "<br>MOBILE NO: " + MobileNo
+          + "<br>LANGUAGE KNOWN: " + LanguageKnown + "<br>EDUCATION LEVEL COMPLETED: " + EducationLevel + "<br>COLLEGE NAME: " + CollegeName
+          + "<br>YEAR OF PASSING: " + YearOfPassing + "<br>ENGINEERING QUALIFICATION: " + EngineeringQualification + "<br>ENGINEERING DEPARTMENT: " + EngineeringDepartment);
+        myWindow.focus();
+      });
+    </script>
+  </div>
+</body>
+<style>
+  body {
+    font-family: 'Anaheim';
+    font-size: 1.2em;
+  }
+
+  #outside {
+    background-color: lightgoldenrodyellow;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: rgb(255, 253, 125);
+    animation: logo 5s infinite;
+  }
+
+  @keyframes logo {
+    0% {
+      color: rgb(195, 0, 255);
+    }
+
+    25% {
+      color: blue;
+    }
+
+    50% {
+      color: rgb(255, 0, 170);
+    }
+
+    75% {
+      color: red;
+    }
+
+    100% {
+      color: rgb(255, 94, 0);
+    }
+  }
+
+  form {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 1em;
+    border: 1px solid rgb(255, 11, 11);
+    background-color: rgb(90, 223, 141);
+    border-radius: 1em;
+  }
+
+  fieldset {
+    border: 1px solid rgb(0, 0, 0);
+
+  }
+
+  legend {
+    font-weight: 700;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 200px;
+    border: 1px solid rgb(0, 4, 255);
+    text-align: center;
+    margin-left: 25em;
+    color: rgb(36, 33, 33);
+  }
+
+  #outside label {
+    position: absolute;
+  }
+
+  button {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #14d5dc;
+    padding: .1rem;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    padding-left: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-family: Georgia;
+    cursor: pointer;
+  }
+
+  .btn i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    text-align: center;
+    background: #fff;
+    color: #14d5dc;
+    border-radius: 50%;
+    margin-left: 1rem;
+    transition: .2s linear;
+  }
+
+  button:hover {
+    background: #2AFADF;
+    color: #0400ee;
+  }
+
+  .btn i:hover {
+    margin-left: 2rem;
+    color: black;
+  }
+
+  @media print {
+    .btn {
+      visibility: hidden;
+    }
+  }
+</style>
+
+</html>
